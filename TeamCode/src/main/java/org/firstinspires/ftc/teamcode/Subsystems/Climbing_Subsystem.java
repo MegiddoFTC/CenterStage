@@ -15,9 +15,8 @@ public class Climbing_Subsystem extends SubsystemBase {
         Climbing_Motor = hMap.get(Motor.class, name);
     }
 
-    public Command Open() {
+    public void Open() {
         Climbing_Motor.setTargetPosition(ClimdMaxHight);
-        return null;
     }
 
     public void Retract() {
