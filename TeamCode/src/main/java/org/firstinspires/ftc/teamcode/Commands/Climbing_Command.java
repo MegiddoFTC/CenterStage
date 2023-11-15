@@ -1,9 +1,10 @@
-package org.firstinspires.ftc.teamcode.Subsystems;
+package org.firstinspires.ftc.teamcode.Commands;
 
-import static org.firstinspires.ftc.teamcode.TELEOP.variables.climb.ClimbIsOpen;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.climb.ClimbIsOpen;
 
 import com.arcrobotics.ftclib.command.CommandBase;
-import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import org.firstinspires.ftc.teamcode.Subsystems.Climbing_Subsystem;
 
 public class Climbing_Command extends CommandBase {
 

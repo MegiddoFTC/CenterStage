@@ -1,18 +1,22 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
-import static org.firstinspires.ftc.teamcode.TELEOP.constants.climb.ClimdMaxHight;
-import static org.firstinspires.ftc.teamcode.TELEOP.constants.climb.FullyRetract;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.climb.ClimdMaxHight;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.climb.FullyRetract;
 
-import com.arcrobotics.ftclib.command.Command;
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
+import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Climbing_Subsystem extends SubsystemBase {
-    private final Motor Climbing_Motor;
+    private final MotorEx Climbing_Motor;
 
     public Climbing_Subsystem(final HardwareMap hMap, final String name) {
-        Climbing_Motor = hMap.get(Motor.class, name);
+        Climbing_Motor = new MotorEx(hMap, name, MotorEx.GoBILDA.RPM_1150);
+        Climbing_Motor.resetEncoder();
+        Climbing_Motor.setRunMode(Motor.RunMode.PositionControl);
+
+
     }
 
     public void Open() {
