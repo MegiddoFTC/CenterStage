@@ -13,6 +13,15 @@ public class Drone_Subsystem extends SubsystemBase {
     public Drone_Subsystem(final HardwareMap hMap, String name){
         DroneServo = hMap.get(ServoEx.class, name);
     }
+    @Override
+    public void register() {
+        super.register();
+    }
+
+    @Override
+    public void periodic(){
+
+    }
 
     public void releaseDrone(){
         DroneServo.setPosition(droneRelease);

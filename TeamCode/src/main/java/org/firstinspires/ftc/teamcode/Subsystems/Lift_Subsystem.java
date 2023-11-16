@@ -14,18 +14,28 @@ public class Lift_Subsystem extends SubsystemBase {
     private final MotorGroup LiftMotors;
 
 
-    public Lift_Subsystem(HardwareMap hardwareMap, String LeftName, String RightName) {
-        MotorEx leftLiftMotor = new MotorEx(hardwareMap, LeftName, MotorEx.GoBILDA.RPM_435);
-        MotorEx rightLiftMotor = new MotorEx(hardwareMap, RightName, MotorEx.GoBILDA.RPM_435);
+    public Lift_Subsystem(HardwareMap hardwareMap) {
+        MotorEx leftLiftMotor = new MotorEx(hardwareMap, "LeftLiftMotor", MotorEx.GoBILDA.RPM_435);
+        MotorEx rightLiftMotor = new MotorEx(hardwareMap, "RightLiftMotor", MotorEx.GoBILDA.RPM_435);
         rightLiftMotor.setInverted(true);
         LiftMotors = new MotorGroup(leftLiftMotor, rightLiftMotor);
         LiftMotors.resetEncoder();
     }
 
 
+    @Override
+    public void register() {
+        super.register();
+    }
+
+    @Override
+    public void periodic(){
+
+    }
     public void MoveLift(double LiftPower){
         LiftMotors.setRunMode(Motor.RunMode.RawPower);
         LiftMotors.set(LiftPower);
+        LiftTargPose =  LiftMotors.getCurrentPosition();
     }
     public void KeepLiftPose(){
         LiftMotors.setRunMode(Motor.RunMode.PositionControl);

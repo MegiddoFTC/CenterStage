@@ -11,14 +11,22 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class Climbing_Subsystem extends SubsystemBase {
     private final MotorEx Climbing_Motor;
 
-    public Climbing_Subsystem(final HardwareMap hMap, final String name) {
-        Climbing_Motor = new MotorEx(hMap, name, MotorEx.GoBILDA.RPM_1150);
+    public Climbing_Subsystem(final HardwareMap hMap) {
+        Climbing_Motor = new MotorEx(hMap, "clmMotor", MotorEx.GoBILDA.RPM_1150);
         Climbing_Motor.resetEncoder();
         Climbing_Motor.setRunMode(Motor.RunMode.PositionControl);
 
 
     }
+    @Override
+    public void register() {
+        super.register();
+    }
 
+    @Override
+    public void periodic(){
+
+    }
     public void Open() {
         Climbing_Motor.setTargetPosition(ClimdMaxHight);
     }
