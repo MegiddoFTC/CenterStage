@@ -23,7 +23,7 @@ public class MyRobot extends Robot {
     Drone_Command droneCommand = new Drone_Command(droneSubsystem);
     Drive_Subsystem driveSubsystem = new Drive_Subsystem(hardwareMap);
     Lift_Subsystem liftSubsystem = new Lift_Subsystem(hardwareMap);
-    Lift_Command liftCommand = new Lift_Command(liftSubsystem)
+    Lift_Command liftCommand = new Lift_Command(liftSubsystem);
 
 
     public enum OpModeType {
