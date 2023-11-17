@@ -11,7 +11,7 @@ public class Climbing_Command extends CommandBase {
     private final Climbing_Subsystem ClimbingSubsystem;
 
     public Climbing_Command(Climbing_Subsystem subsystem){
-        ClimbingSubsystem = subsystem;
+        this.ClimbingSubsystem = subsystem;
         addRequirements(ClimbingSubsystem);
     }
 

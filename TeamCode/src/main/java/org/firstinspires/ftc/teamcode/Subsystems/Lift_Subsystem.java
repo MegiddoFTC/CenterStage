@@ -11,7 +11,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import org.firstinspires.ftc.teamcode.R;
 
 public class Lift_Subsystem extends SubsystemBase {
-    private final MotorGroup LiftMotors;
+    public final MotorGroup LiftMotors;
 
 
     public Lift_Subsystem(HardwareMap hardwareMap) {
@@ -23,10 +23,6 @@ public class Lift_Subsystem extends SubsystemBase {
     }
 
 
-    @Override
-    public void register() {
-        super.register();
-    }
 
     @Override
     public void periodic(){

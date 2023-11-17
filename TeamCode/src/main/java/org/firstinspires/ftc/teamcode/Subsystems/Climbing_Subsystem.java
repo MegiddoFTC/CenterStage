@@ -18,10 +18,6 @@ public class Climbing_Subsystem extends SubsystemBase {
 
 
     }
-    @Override
-    public void register() {
-        super.register();
-    }
 
     @Override
     public void periodic(){

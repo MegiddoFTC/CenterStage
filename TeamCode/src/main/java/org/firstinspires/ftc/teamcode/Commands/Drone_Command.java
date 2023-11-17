@@ -13,7 +13,7 @@ public class Drone_Command extends CommandBase {
     private final Drone_Subsystem droneSubsystem;
 
     public Drone_Command(Drone_Subsystem subsystem){
-        droneSubsystem = subsystem;
+        this.droneSubsystem = subsystem;
         addRequirements(droneSubsystem);
     }
 

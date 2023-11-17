@@ -1,6 +1,4 @@
-package org.firstinspires.ftc.teamcode;
-
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
+package org.firstinspires.ftc.teamcode.Auto;
 
 import androidx.annotation.NonNull;
 

@@ -12,7 +12,7 @@ public class Lift_Command extends CommandBase {
     private final Lift_Subsystem liftSubsystem;
 
     public Lift_Command(Lift_Subsystem subsystem){
-         liftSubsystem = subsystem;
+         this.liftSubsystem = subsystem;
         addRequirements(liftSubsystem);
     }
 

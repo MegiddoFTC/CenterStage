@@ -1,6 +1,10 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickX1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickY1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.RightStickX1;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.driverOp;
+
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.arcrobotics.ftclib.drivebase.MecanumDrive;
@@ -20,12 +24,13 @@ public class Drive_Subsystem extends SubsystemBase {
 
         drive = new MecanumDrive(leftFront, rightFront, leftBack, rightBack);
     }
+
     @Override
     public void periodic(){
         drive.driveRobotCentric(
-                driverOp.getLeftX(),
-                driverOp.getLeftY(),
-                driverOp.getRightY()
+                LeftStickX1,
+                LeftStickY1,
+                RightStickX1
         );    }
 
 }

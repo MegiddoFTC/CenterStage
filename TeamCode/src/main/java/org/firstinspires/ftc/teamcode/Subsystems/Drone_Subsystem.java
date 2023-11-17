@@ -10,13 +10,10 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class Drone_Subsystem extends SubsystemBase {
     private final ServoEx DroneServo;
 
-    public Drone_Subsystem(final HardwareMap hMap, String name){
-        DroneServo = hMap.get(ServoEx.class, name);
+    public Drone_Subsystem(final HardwareMap hMap){
+        DroneServo = hMap.get(ServoEx.class, "ServoDrone");
     }
-    @Override
-    public void register() {
-        super.register();
-    }
+
 
     @Override
     public void periodic(){

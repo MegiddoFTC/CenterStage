@@ -9,21 +9,27 @@ import com.arcrobotics.ftclib.drivebase.MecanumDrive;
 
 import org.firstinspires.ftc.teamcode.Commands.Climbing_Command;
 import org.firstinspires.ftc.teamcode.Commands.Drone_Command;
+import org.firstinspires.ftc.teamcode.Commands.IntakeCommand;
 import org.firstinspires.ftc.teamcode.Commands.Lift_Command;
 import org.firstinspires.ftc.teamcode.Subsystems.Climbing_Subsystem;
+import org.firstinspires.ftc.teamcode.Subsystems.Deposit_Subsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.Drive_Subsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.Drone_Subsystem;
+import org.firstinspires.ftc.teamcode.Subsystems.IntakeSubsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.Lift_Subsystem;
 
 
 public class MyRobot extends Robot {
     Climbing_Subsystem climbingSubsystem = new Climbing_Subsystem(hardwareMap);
     Climbing_Command climbingCommand = new Climbing_Command(climbingSubsystem);
-    Drone_Subsystem droneSubsystem = new Drone_Subsystem(hardwareMap, "DroneServo");
+    Drone_Subsystem droneSubsystem = new Drone_Subsystem(hardwareMap);
     Drone_Command droneCommand = new Drone_Command(droneSubsystem);
     Drive_Subsystem driveSubsystem = new Drive_Subsystem(hardwareMap);
     Lift_Subsystem liftSubsystem = new Lift_Subsystem(hardwareMap);
     Lift_Command liftCommand = new Lift_Command(liftSubsystem);
+    IntakeSubsystem intakeSubsystem = new IntakeSubsystem(hardwareMap);
+    Deposit_Subsystem depositSubsystem = new Deposit_Subsystem(hardwareMap);
+    IntakeCommand intakeCommand = new IntakeCommand(intakeSubsystem, depositSubsystem, liftSubsystem);
 
 
     public enum OpModeType {
