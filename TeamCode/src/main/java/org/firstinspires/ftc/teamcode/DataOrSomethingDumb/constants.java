@@ -22,6 +22,7 @@ public final class constants {
     }
     public final static class deposit{
         public final static class colors{
+            //TODO: ADD DATA
             public static int[] greenMin = {0,0,0};
             public static int[] greenMax = {0,0,0};
             public static int[] whiteMin = {0,0,0};
@@ -30,6 +31,9 @@ public final class constants {
             public static int[] purpleMax = {0,0,0};
             public static int[] yellowMin = {0,0,0};
             public static int[] yellowMax = {0,0,0};
+            public static int ServoStop = 0;
+            public static double depositAngle = 200;
+            public static double intakeAngle = 200;
         }
     }
 

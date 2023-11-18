@@ -1,5 +1,9 @@
 package org.firstinspires.ftc.teamcode.DataOrSomethingDumb;
 
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickX1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickY1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.RightStickX1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.driveTriggersAxis;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.intGetLeftBumper2;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.intGetRightBumper2;
 
@@ -26,7 +30,13 @@ public class variables {
         public static int IntakePower = intGetRightBumper2 - intGetLeftBumper2;
     }
     public static class deposit{
-        public static boolean IsIntakeMode = true;
+
+    }
+    public static class drive{
+        public static double drivePower = 1;
+        public static double xPower = (LeftStickX1+driveTriggersAxis)*drivePower;
+        public static double yPower = LeftStickY1*drivePower;
+        public static double SpinPower = RightStickX1*drivePower;
     }
 
 }

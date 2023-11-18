@@ -37,4 +37,10 @@ public class Lift_Subsystem extends SubsystemBase {
         LiftMotors.setRunMode(Motor.RunMode.PositionControl);
         LiftMotors.setTargetPosition(LiftTargPose);
     }
+    public void ReturnLiftTo0(){
+        LiftTargPose = 0;
+    }
+    public boolean isLiftAtIntake(){
+        return (LiftMotors.getCurrentPosition()<20);
+    }
 }

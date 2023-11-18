@@ -50,17 +50,22 @@ public class Buttons {
     public static Button A2 = AutoButtonMap(toolOp, GamepadKeys.Button.A);
     public static double leftTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.LEFT_TRIGGER);
     public static double rightTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.RIGHT_TRIGGER);
+    public static double leftTrigger1 = autoGetTrigger(driverOp, GamepadKeys.Trigger.LEFT_TRIGGER);
+    public static double rightTrigger1 = autoGetTrigger(driverOp, GamepadKeys.Trigger.RIGHT_TRIGGER);
     public static boolean getX2 = autoGetButtons(toolOp, GamepadKeys.Button.X);
+    public static boolean getB2 = autoGetButtons(toolOp, GamepadKeys.Button.B);
     public static boolean getUp2 = autoGetButtons(toolOp, GamepadKeys.Button.DPAD_UP);
     public static boolean getRight2 = autoGetButtons(toolOp, GamepadKeys.Button.DPAD_RIGHT);
     public static boolean getLeft2 = autoGetButtons(toolOp, GamepadKeys.Button.DPAD_LEFT);
     public static boolean getDown2 = autoGetButtons(toolOp, GamepadKeys.Button.DPAD_DOWN);
     public static boolean getRightBumper2 = autoGetButtons(toolOp, GamepadKeys.Button.RIGHT_BUMPER);
     public static boolean getLeftBumper2 = autoGetButtons(toolOp, GamepadKeys.Button.LEFT_BUMPER);
+    public static boolean getRightBumper1 = autoGetButtons(driverOp, GamepadKeys.Button.RIGHT_BUMPER);
     public static int intGetLeftBumper2 = getLeftBumper2 ? 1 : 0;
     public static int intGetRightBumper2 = getRightBumper2 ? 1 : 0;
     public static double LeftStickX1 = driverOp.getLeftX();
     public static double LeftStickY1 = driverOp.getLeftY();
     public static double RightStickX1 = driverOp.getRightX();
     public static double toolsTriggersAxis = TriggerAxis(leftTrigger2, rightTrigger2);
+    public static double driveTriggersAxis = TriggerAxis(leftTrigger1, rightTrigger1);
 }

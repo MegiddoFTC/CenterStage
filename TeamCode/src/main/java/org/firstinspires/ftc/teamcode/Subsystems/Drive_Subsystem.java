@@ -4,6 +4,11 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftSti
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickY1;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.RightStickX1;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.driverOp;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getRightBumper1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.SpinPower;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.drivePower;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.xPower;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.yPower;
 
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
@@ -28,9 +33,16 @@ public class Drive_Subsystem extends SubsystemBase {
     @Override
     public void periodic(){
         drive.driveRobotCentric(
-                LeftStickX1,
-                LeftStickY1,
-                RightStickX1
-        );    }
+                xPower,
+                yPower,
+                SpinPower
+        );
+        if (getRightBumper1){
+            drivePower = 0.3;
+        }
+        else {
+            drivePower = 1;
+        }
+    }
 
 }

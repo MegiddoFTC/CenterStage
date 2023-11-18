@@ -6,7 +6,7 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.depos
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.deposit.colors.purpleMax;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.deposit.colors.whiteMax;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.deposit.colors.whiteMin;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.deposit.IsIntakeMode;
+
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.arcrobotics.ftclib.hardware.SensorColor;
@@ -38,6 +38,10 @@ public class Deposit_Subsystem extends SubsystemBase {
         LeftColorSensor = new SensorColor(hMap.get(ColorSensor.class, "LeftColorSensor"));
         RightColorSensor = new SensorColor(hMap.get(ColorSensor.class, "RightColorSensor"));
     }
+    @Override
+    public void periodic(){
+
+    }
 
     public void ArmMove(double ArmAngle){
         ArmServoRight.turnToAngle(ArmAngle);
@@ -46,18 +50,17 @@ public class Deposit_Subsystem extends SubsystemBase {
     public void DepositAngle(double DepositAngle){
         DepositAngleServo.turnToAngle(DepositAngle);
     }
-    public void IntakeAndDepositWheels(double ServoWheelPower){
-        if (IsIntakeMode) {
-            if (ColorSensingRight() == null) {
-                ServoWheelRight.set(ServoWheelPower);
-            }
-            if (ColorSensingLeft() == null) {
-                ServoWheelLeft.set(ServoWheelPower);
-            }
-        }
+    public void IntakeAndDepositLeftWheel(double ServoWheelPower){
+        ServoWheelLeft.set(ServoWheelPower);
 
 
     }
+    public void IntakeAndDepositRightWheel(double ServoWheelPower){
+        ServoWheelRight.set(ServoWheelPower);
+        }
+
+
+
     public Color ColorSensingLeft(){
         return ColorSensing(LeftColorSensor);
     }
