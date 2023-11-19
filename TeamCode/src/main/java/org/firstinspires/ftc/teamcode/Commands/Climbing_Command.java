@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Commands;
 
+import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.climb.ClimbIsOpen;
 
 import com.arcrobotics.ftclib.command.CommandBase;
@@ -20,9 +21,11 @@ public class Climbing_Command extends CommandBase {
         if (!ClimbIsOpen) {
             ClimbingSubsystem.Open();
             ClimbIsOpen = true;
+            telemetry.addData("Open", true);
         }
         else {
             ClimbingSubsystem.Retract();
+            telemetry.addData("Retract", true);
             ClimbIsOpen = false;
         }
 

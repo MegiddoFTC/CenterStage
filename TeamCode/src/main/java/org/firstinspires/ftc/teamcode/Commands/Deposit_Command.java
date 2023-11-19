@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Commands;
 
+import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getLeftBumper2;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getRightBumper2;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.intGetLeftBumper2;
@@ -26,11 +27,15 @@ public class Deposit_Command extends CommandBase {
     public void execute(){
         if ((!liftSubsystem.isLiftAtIntake()&&LiftTargPose > 20)){
             depositSubsystem.ArmMove(depositAngle);
+            telemetry.addData("ArmMove", "depositAngle");
             depositSubsystem.IntakeAndDepositRightWheel(intGetRightBumper2);
+            telemetry.addData("IntakeAndDepositRightWheel",intGetRightBumper2 );
             depositSubsystem.IntakeAndDepositLeftWheel(intGetLeftBumper2);
+            telemetry.addData("IntakeAndDepositLeftWheel",intGetLeftBumper2 );
         }
         else {
             depositSubsystem.ArmMove(intakeAngle);
+            telemetry.addData("ArmMove", "intakeAngle");
         }
     }
 }
