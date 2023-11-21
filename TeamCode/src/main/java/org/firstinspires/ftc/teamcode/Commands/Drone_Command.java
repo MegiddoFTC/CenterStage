@@ -21,16 +21,14 @@ public class Drone_Command extends CommandBase {
 
     @Override
     public void initialize(){
-        droneSubsystem.storeDrone();
-    }
-    @Override
-    public void execute(){
-        if (getX2) {
-            droneSubsystem.releaseDrone();
-            telemetry.addData("Drone", "Drone");
-        }
+        droneSubsystem.releaseDrone();
+        telemetry.addData("Drone", "Drone");
     }
 
+    @Override
+    public boolean isFinished(){
+        return true;
+    }
 
 
 

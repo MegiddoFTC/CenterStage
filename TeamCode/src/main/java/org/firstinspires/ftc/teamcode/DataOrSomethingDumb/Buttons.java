@@ -48,6 +48,7 @@ public class Buttons {
     }
 
     public static Button A2 = AutoButtonMap(toolOp, GamepadKeys.Button.A);
+    public static Button X2 = AutoButtonMap(toolOp, GamepadKeys.Button.X);
     public static double leftTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.LEFT_TRIGGER);
     public static double rightTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.RIGHT_TRIGGER);
     public static double leftTrigger1 = autoGetTrigger(driverOp, GamepadKeys.Trigger.LEFT_TRIGGER);
