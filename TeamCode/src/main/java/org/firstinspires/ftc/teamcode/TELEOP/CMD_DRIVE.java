@@ -21,6 +21,7 @@ public class CMD_DRIVE extends OpModeTemplate{
         depositCommand.execute();
         liftCommand.execute();
         intakeCommand.execute();
+        schedule(depositCommand, liftCommand, intakeCommand);
     }
 
 }

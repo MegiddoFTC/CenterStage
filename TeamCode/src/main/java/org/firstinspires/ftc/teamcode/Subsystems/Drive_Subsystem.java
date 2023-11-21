@@ -32,7 +32,7 @@ public class Drive_Subsystem extends SubsystemBase {
         rightBack = new MotorEx(hMap, "RightBack");
         rightFront = new MotorEx(hMap, "RightFront");
         leftBack = new MotorEx(hMap, "LeftBack");
-        imu = hMap.get(RevIMU.class, "imu");
+        imu = new RevIMU(hMap);
         imu.init();
 
 
