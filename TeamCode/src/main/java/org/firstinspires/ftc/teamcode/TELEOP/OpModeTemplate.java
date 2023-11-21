@@ -1,10 +1,6 @@
 package org.firstinspires.ftc.teamcode.TELEOP;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.A2;
-
-
-import com.arcrobotics.ftclib.command.Robot;
+import com.arcrobotics.ftclib.command.CommandOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Commands.Climbing_Command;
@@ -19,25 +15,20 @@ import org.firstinspires.ftc.teamcode.Subsystems.Drone_Subsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.Intake_Subsystem;
 import org.firstinspires.ftc.teamcode.Subsystems.Lift_Subsystem;
 
+abstract public class OpModeTemplate extends CommandOpMode {
+    protected Climbing_Subsystem climbingSubsystem;
+    protected Climbing_Command climbingCommand;
+    protected Drone_Subsystem droneSubsystem;
+    protected Drone_Command droneCommand;
+    protected Drive_Subsystem driveSubsystem;
+    protected Lift_Subsystem liftSubsystem;
+    protected Lift_Command liftCommand;
+    protected Intake_Subsystem intakeSubsystem;
+    protected Intake_Command intakeCommand;
+    protected Deposit_Subsystem depositSubsystem;
+    protected Deposit_Command depositCommand;
 
-public class MyRobot extends Robot {
-    Climbing_Subsystem climbingSubsystem;
-    Climbing_Command climbingCommand;
-    Drone_Subsystem droneSubsystem;
-    Drone_Command droneCommand;
-    Drive_Subsystem driveSubsystem;
-    Lift_Subsystem liftSubsystem;
-    Lift_Command liftCommand;
-    Intake_Subsystem intakeSubsystem;
-    Intake_Command intakeCommand;
-    Deposit_Subsystem depositSubsystem;
-    Deposit_Command depositCommand;
-
-
-
-
-    // the constructor with a specified opmode type
-    public MyRobot(HardwareMap hardwareMap) {
+    protected void initHardware(){
         climbingSubsystem = new Climbing_Subsystem(hardwareMap);
         climbingCommand = new Climbing_Command(climbingSubsystem);
         droneSubsystem = new Drone_Subsystem(hardwareMap);
@@ -49,15 +40,10 @@ public class MyRobot extends Robot {
         intakeCommand = new Intake_Command(intakeSubsystem, depositSubsystem, liftSubsystem);
         depositSubsystem = new Deposit_Subsystem(hardwareMap);
         depositCommand = new Deposit_Command(depositSubsystem, liftSubsystem);
-
+        register(climbingSubsystem, droneSubsystem, driveSubsystem, liftSubsystem, intakeSubsystem, depositSubsystem);
+        schedule(climbingCommand, droneCommand, liftCommand, intakeCommand, depositCommand);
     }
 
-    public void Tele_FC() {
-        register(driveSubsystem);
-        schedule(droneCommand, liftCommand, intakeCommand, depositCommand);
-        A2.whenPressed(climbingCommand);
-
-    }
 
 
 }
