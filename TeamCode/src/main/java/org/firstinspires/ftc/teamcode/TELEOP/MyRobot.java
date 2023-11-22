@@ -6,6 +6,7 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.A2;
 
 import com.arcrobotics.ftclib.command.Robot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Commands.Climbing_Command;

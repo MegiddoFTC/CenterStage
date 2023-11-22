@@ -23,8 +23,4 @@ public class CMD_DRIVE extends OpModeTemplate{
         intakeCommand.execute();
     }
 
-    @Override
-    public void reset() {
-        super.reset();
-    }
 }
