@@ -42,6 +42,9 @@ public class Drive_Subsystem extends SubsystemBase {
 
     @Override
     public void periodic(){
+
+    }
+    public void drive(){
         drive.driveFieldCentric(
                 xPower,
                 yPower,

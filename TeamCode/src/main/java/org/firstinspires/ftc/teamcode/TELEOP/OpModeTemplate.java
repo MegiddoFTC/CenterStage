@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Commands.Climbing_Command;
 import org.firstinspires.ftc.teamcode.Commands.Deposit_Command;
+import org.firstinspires.ftc.teamcode.Commands.Drive_Command;
 import org.firstinspires.ftc.teamcode.Commands.Drone_Command;
 import org.firstinspires.ftc.teamcode.Commands.Intake_Command;
 import org.firstinspires.ftc.teamcode.Commands.Lift_Command;
@@ -21,6 +22,7 @@ abstract public class OpModeTemplate extends CommandOpMode {
     protected Drone_Subsystem droneSubsystem;
     protected Drone_Command droneCommand;
     protected Drive_Subsystem driveSubsystem;
+    protected Drive_Command driveCommand;
     protected Lift_Subsystem liftSubsystem;
     protected Lift_Command liftCommand;
     protected Intake_Subsystem intakeSubsystem;
@@ -34,6 +36,7 @@ abstract public class OpModeTemplate extends CommandOpMode {
         droneSubsystem = new Drone_Subsystem(hardwareMap);
         droneCommand = new Drone_Command(droneSubsystem);
         driveSubsystem = new Drive_Subsystem(hardwareMap);
+        driveCommand = new Drive_Command(driveSubsystem);
         liftSubsystem = new Lift_Subsystem(hardwareMap);
         liftCommand = new Lift_Command(liftSubsystem);
         intakeSubsystem = new Intake_Subsystem(hardwareMap);
@@ -42,6 +45,7 @@ abstract public class OpModeTemplate extends CommandOpMode {
         depositCommand = new Deposit_Command(depositSubsystem, liftSubsystem);
         register(climbingSubsystem, droneSubsystem, driveSubsystem, liftSubsystem, intakeSubsystem, depositSubsystem);
         schedule(climbingCommand, droneCommand, liftCommand, intakeCommand, depositCommand);
+        driveSubsystem.setDefaultCommand(driveCommand);
     }
 
 

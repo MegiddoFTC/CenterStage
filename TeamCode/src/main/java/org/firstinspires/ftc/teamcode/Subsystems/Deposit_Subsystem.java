@@ -34,6 +34,7 @@ public class Deposit_Subsystem extends SubsystemBase {
         ArmServoRight = new SimpleServo(hMap, "ArmServoRight", 0, 300);
         ArmServoRight.setInverted(true);
         ServoWheelLeft = new CRServo(hMap, "ServoWheelLeft");
+        ServoWheelLeft.setInverted(true);
         ServoWheelRight = new CRServo(hMap, "ServoWheelRight");
         LeftColorSensor = new SensorColor(hMap.get(ColorSensor.class, "LeftColorSensor"));
         RightColorSensor = new SensorColor(hMap.get(ColorSensor.class, "RightColorSensor"));

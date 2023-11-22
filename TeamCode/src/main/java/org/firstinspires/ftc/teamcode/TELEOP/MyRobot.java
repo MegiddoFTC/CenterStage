@@ -5,6 +5,7 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.A2;
 
 
 import com.arcrobotics.ftclib.command.Robot;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.teamcode.Commands.Climbing_Command;
@@ -37,7 +38,7 @@ public class MyRobot extends Robot {
 
 
     // the constructor with a specified opmode type
-    public MyRobot(HardwareMap hardwareMap) {
+    public MyRobot() {
         climbingSubsystem = new Climbing_Subsystem(hardwareMap);
         climbingCommand = new Climbing_Command(climbingSubsystem);
         droneSubsystem = new Drone_Subsystem(hardwareMap);
@@ -52,8 +53,8 @@ public class MyRobot extends Robot {
 
     }
 
-    public void Tele_FC() {
-        register(driveSubsystem);
+    public void run() {
+        register(driveSubsystem, depositSubsystem, climbingSubsystem, liftSubsystem, droneSubsystem, intakeSubsystem);
         schedule(droneCommand, liftCommand, intakeCommand, depositCommand);
         A2.whenPressed(climbingCommand);
 

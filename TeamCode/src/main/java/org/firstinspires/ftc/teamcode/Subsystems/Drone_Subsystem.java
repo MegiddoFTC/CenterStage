@@ -5,14 +5,15 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.constants.drone
 
 import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.arcrobotics.ftclib.hardware.ServoEx;
+import com.arcrobotics.ftclib.hardware.SimpleServo;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 public class Drone_Subsystem extends SubsystemBase {
-    private final Servo DroneServo;
+    private final SimpleServo DroneServo;
 
     public Drone_Subsystem(final HardwareMap hMap){
-        DroneServo = hMap.get(Servo.class, "ServoDrone");
+        DroneServo = new SimpleServo(hMap, "ServoDrone",0,300);
     }
 
 

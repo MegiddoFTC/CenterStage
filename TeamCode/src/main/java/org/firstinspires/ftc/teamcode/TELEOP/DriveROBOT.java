@@ -9,7 +9,7 @@ public class DriveROBOT extends LinearOpMode {
 
     @Override
     public void runOpMode() throws InterruptedException {
-        Robot m_robot = new MyRobot(hardwareMap);
+        Robot m_robot = new MyRobot();
 
         waitForStart();
 
