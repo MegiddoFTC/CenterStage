@@ -14,6 +14,7 @@ public class CMD_DRIVE extends OpModeTemplate{
     }
     @Override
     public void run(){
+        gamepad2.rumble(50000,50000,5000);
         super.run();
         driveSubsystem.periodic();
         A2.whenPressed(climbingCommand);

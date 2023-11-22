@@ -5,6 +5,7 @@ import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftSti
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.RightStickX1;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.driverOp;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getRightBumper1;
+import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.toolOp;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.SpinPower;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.drivePower;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.xPower;
@@ -18,12 +19,15 @@ import com.arcrobotics.ftclib.hardware.RevIMU;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
 import com.arcrobotics.ftclib.hardware.motors.MotorEx;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
+import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.IMU;
 
 public class Drive_Subsystem extends SubsystemBase {
     protected final MotorEx leftFront, rightFront, leftBack, rightBack;
     private final RevIMU imu;
+    Gamepad gamepad;
+
 
     private final MecanumDrive drive;
 
@@ -34,7 +38,7 @@ public class Drive_Subsystem extends SubsystemBase {
         leftBack = new MotorEx(hMap, "LeftBack");
         imu = new RevIMU(hMap);
         imu.init();
-
+        gamepad =  new Gamepad();
 
 
         drive = new MecanumDrive(leftFront, rightFront, leftBack, rightBack);
@@ -52,6 +56,8 @@ public class Drive_Subsystem extends SubsystemBase {
                 imu.getHeading()
 
         );
+        gamepad.rumble(50000,50000,50000);
+
         if (getRightBumper1){
             drivePower = 0.3;
         }
