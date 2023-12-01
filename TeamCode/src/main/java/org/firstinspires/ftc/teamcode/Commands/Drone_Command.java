@@ -21,7 +21,6 @@ public class Drone_Command extends CommandBase {
     @Override
     public void initialize(){
         droneSubsystem.releaseDrone();
-        telemetry.addData("Drone", "Drone");
     }
 
     @Override

@@ -51,7 +51,6 @@ public class Drive_Subsystem extends SubsystemBase {
                 imu.getHeading()
 
         );
-        gamepad.rumble(50000,50000,50000);
 
         if (getRightBumper1){
             drivePower = 0.3;
