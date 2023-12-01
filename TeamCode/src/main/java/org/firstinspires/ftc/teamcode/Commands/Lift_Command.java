@@ -23,16 +23,13 @@ public class Lift_Command extends CommandBase {
         LiftPower = toolsTriggersAxis;
         if (LiftPower!=0){
             liftSubsystem.MoveLift(LiftPower);
-            telemetry.addData("MoveLift", "MoveLift");
         }
         else if (getB2){
             liftSubsystem.ReturnLiftTo0();
-            telemetry.addData("ReturnLiftTo0", "ReturnLiftTo0");
 
         }
         else {
             liftSubsystem.KeepLiftPose();
-            telemetry.addData("KeepLiftPose", "KeepLiftPose");
         }
 
     }

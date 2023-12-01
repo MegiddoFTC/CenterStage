@@ -3,7 +3,6 @@ package org.firstinspires.ftc.teamcode.Commands;
 
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.telemetry;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getX2;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.toolOp;
 
 import com.arcrobotics.ftclib.command.CommandBase;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;

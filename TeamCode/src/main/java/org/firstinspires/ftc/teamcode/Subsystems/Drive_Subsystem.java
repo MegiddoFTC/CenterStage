@@ -1,11 +1,6 @@
 package org.firstinspires.ftc.teamcode.Subsystems;
 
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickX1;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.LeftStickY1;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.RightStickX1;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.driverOp;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.getRightBumper1;
-import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.Buttons.toolOp;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.SpinPower;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.drivePower;
 import static org.firstinspires.ftc.teamcode.DataOrSomethingDumb.variables.drive.xPower;

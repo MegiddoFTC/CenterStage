@@ -21,11 +21,9 @@ public class Climbing_Command extends CommandBase {
         if (!ClimbIsOpen) {
             ClimbingSubsystem.Open();
             ClimbIsOpen = true;
-            telemetry.addData("Open", true);
         }
         else {
             ClimbingSubsystem.Retract();
-            telemetry.addData("Retract", true);
             ClimbIsOpen = false;
         }
 

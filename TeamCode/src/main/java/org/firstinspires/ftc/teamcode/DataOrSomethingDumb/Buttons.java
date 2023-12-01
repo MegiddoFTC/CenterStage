@@ -1,16 +1,17 @@
 package org.firstinspires.ftc.teamcode.DataOrSomethingDumb;
 
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad1;
-import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.gamepad2;
+
+import static org.firstinspires.ftc.teamcode.TELEOP.OpModeTemplate.driverOp;
+import static org.firstinspires.ftc.teamcode.TELEOP.OpModeTemplate.toolOp;
 
 import com.arcrobotics.ftclib.command.button.Button;
 import com.arcrobotics.ftclib.gamepad.GamepadEx;
 import com.arcrobotics.ftclib.gamepad.GamepadKeys;
-import com.qualcomm.robotcore.hardware.Gamepad;
+
+import org.firstinspires.ftc.robotcore.external.Supplier;
 
 public class Buttons {
-    public static GamepadEx driverOp = new GamepadEx(gamepad1);
-    public static GamepadEx toolOp = new GamepadEx(gamepad2);
+
 
     public static Button AutoButtonMap(GamepadEx gamepadEx, GamepadKeys.Button gamepadButton){
         return gamepadEx.getGamepadButton(gamepadButton);
@@ -46,9 +47,8 @@ public class Buttons {
         return null;
 
     }
-
-    public static Button A2 = AutoButtonMap(toolOp, GamepadKeys.Button.A);
     public static Button X2 = AutoButtonMap(toolOp, GamepadKeys.Button.X);
+    public static Button A2 = AutoButtonMap(toolOp, GamepadKeys.Button.A);
     public static double leftTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.LEFT_TRIGGER);
     public static double rightTrigger2 = autoGetTrigger(toolOp, GamepadKeys.Trigger.RIGHT_TRIGGER);
     public static double leftTrigger1 = autoGetTrigger(driverOp, GamepadKeys.Trigger.LEFT_TRIGGER);
