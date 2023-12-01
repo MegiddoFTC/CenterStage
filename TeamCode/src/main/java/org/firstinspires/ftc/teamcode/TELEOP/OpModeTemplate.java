@@ -23,9 +23,7 @@ import org.firstinspires.ftc.teamcode.Subsystems.Lift_Subsystem;
 
 abstract public class OpModeTemplate extends CommandOpMode {
     protected Climbing_Subsystem climbingSubsystem;
-    protected Climbing_Command climbingCommand;
     protected Drone_Subsystem droneSubsystem;
-    protected Drone_Command droneCommand;
     protected Drive_Subsystem driveSubsystem;
     protected Drive_Command driveCommand;
     protected Lift_Subsystem liftSubsystem;
